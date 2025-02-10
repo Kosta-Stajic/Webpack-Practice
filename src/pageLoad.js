@@ -4,8 +4,8 @@ import backgroundImage from "./foody.jpg"
 export const pageLoad = function(){
 
    const main = document.querySelector("#content")
-   
    const image = document.createElement("img")
+   image.className ="background"
    image.src = backgroundImage;
 
    const name = document.createElement("div")
@@ -19,15 +19,16 @@ export const pageLoad = function(){
    paragraph.textContent = "Welcome to Grandma's Kitchen Paradise. Here we strive to deliver delicious food and exemplary service. We take pride in sourcing our food locally and preparing it with love and attention to every detail!"
 
    const footer = document.createElement("footer")
-   footer.textContent = "Copy right GitHub @Kosta-Stajic"
+   footer.textContent = "Copy right GitHub @Kosta-Stajic";
    
+  
    
-   
-   main.appendChild(image)
+   document.body.appendChild(image)
    main.appendChild(name)
    main.appendChild(textContainer)
    textContainer.appendChild(paragraph)
-   document.body.appendChild(footer)
    
+   if (!document.querySelector('footer')) {
+      document.body.appendChild(footer);
+   }
 }
-
